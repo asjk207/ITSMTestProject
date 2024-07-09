@@ -1,0 +1,58 @@
+<template>
+    <template if:true={caseData}>
+        <lightning-card title={caseData.fields.Subject.value} icon-name="standard:case">
+            <div class="slds-m-around_medium">
+                <h1>Case #{caseData.fields.CaseNumber.value}</h1>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <p><strong>Opened:</strong> {caseData.fields.CreatedDate.value}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p><strong>Status:</strong> {caseData.fields.Status.value}</p>
+                    </div>
+                </div>
+                <template if:false={isClosed}>
+                    <lightning-button label="Close Case" onclick={handleCloseCase} class="slds-m-top_medium"></lightning-button>
+                </template>
+            </div>
+        </lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Activity">
+                <template if:false={isClosed}>
+                    <div class="slds-m-around_medium">
+                        <lightning-textarea label="Add Comment" value={newComment} onchange={handleCommentChange}></lightning-textarea>
+                        <lightning-button label="Add Comment" onclick={handleAddComment}></lightning-button>
+                    </div>
+                </template>
+                <template if:true={comments}>
+                    <div class="slds-m-around_medium">
+                        <lightning-card title="Comments">
+                            <div class="slds-p-horizontal_small">
+                                <template for:each={comments} for:item="comment">
+                                    <div key={comment.Id} class="slds-box slds-m-around_small">
+                                        <p><strong>{comment.CreatedBy.Name}</strong> - {comment.CreatedDate}</p>
+                                        <p>{comment.CommentBody}</p>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+                <template if:false={comments}>
+                    <p>No comments found.</p>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Details">
+                <div class="slds-m-around_medium">
+                    <lightning-record-view-form record-id={caseId} object-api-name="Case">
+                        <lightning-output-field field-name="Subject"></lightning-output-field>
+                        <lightning-output-field field-name="Description"></lightning-output-field>
+                    </lightning-record-view-form>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+    <template if:false={caseData}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="My Cases" icon-name="standard:case">
+        <div class="slds-m-around_medium slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-combobox name="status" label="Filter by Status" value={selectedStatus} placeholder="Select Status" options={statusOptions} onchange={handleStatusChange}></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+                <lightning-input type="search" label="Search Cases" onchange={handleSearch}></lightning-input>
+            </div>
+        </div>
+        <div class="slds-m-around_medium">
+            <template if:true={filteredCases}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={filteredCases}
+                    columns={columns}
+                    hide-checkbox-column
+                ></lightning-datatable>
+            </template>
+            <template if:false={filteredCases}>
+                <p>No cases found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
