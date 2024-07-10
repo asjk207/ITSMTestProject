@@ -5,11 +5,12 @@ trigger CaseTrigger on Case (Before Insert, Before Update) {
 		contactIds.add(c.ContactId);
 		acctIds.add(c.AccountId);
 	}
-    List <EntitlementContact> entlContacts = [SELECT e.EntitlementId, e.ContactId, e.Entitlement.AssetId
-                                                FROM EntitlementContact e
-                                               WHERE e.ContactId in :contactIds
-                                                 AND e.Entitlement.EndDate >= Today
-                                                 AND e.Entitlement.StartDate <= Today];
+    List <EntitlementContact> entlContacts =
+                [SELECT e.EntitlementId, e.ContactId, e.Entitlement.AssetId
+                   FROM EntitlementContact e
+                  WHERE e.ContactId in :contactIds
+                    AND e.Entitlement.EndDate >= Today
+                    AND e.Entitlement.StartDate <= Today];
 
 	if(entlContacts.isEmpty()==false){
 		for(Case c : Trigger.new){

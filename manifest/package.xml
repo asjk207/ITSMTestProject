@@ -32,5 +32,22 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>59.0</version>
+    <types>
+        <members>Case.Case_Worker__c</members>
+        <members>Case.First_Assign_Time__c</members>
+        <members>Case.First_Comment_Time__c</members>
+        <members>Case.realAutoWorkingTime__c</members>
+        <members>Case.realManualWorkingTime__c</members>
+        <members>Case.Product__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Dashboard</name>
+    </types>
+    <version>61.0</version>
 </Package>

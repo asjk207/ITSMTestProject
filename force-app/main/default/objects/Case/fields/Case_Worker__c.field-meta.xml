@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Worker__c</fullName>
+    <label>Case Worker</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>이형석</fullName>
+                <default>false</default>
+                <label>이형석</label>
+            </value>
+            <value>
+                <fullName>이호상</fullName>
+                <default>false</default>
+                <label>이호상</label>
+            </value>
+            <value>
+                <fullName>전인범</fullName>
+                <default>false</default>
+                <label>전인범</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
