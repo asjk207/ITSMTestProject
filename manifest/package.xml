@@ -42,11 +42,21 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SupportReport2wqewe/Case_CJJ</members>
+        <members>SupportReport2wqewe/Case_Group_mmW</members>
+        <members>SupportReport2wqewe/Home_Nas</members>
+        <members>SupportReport2wqewe/Home_SJS</members>
+        <members>SupportReport2wqewe/new_report_2uA</members>
+        <members>SupportReport2wqewe/new_report_SbB</members>
+        <members>SupportReport2wqewe/new_report_shA</members>
+        <members>SupportReport2wqewe/new_report_xTQ</members>
+        <members>CommunityCloudSupportReportFolder/new_report_wjn</members>
         <name>Report</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SupportDashboard2123weqwe/cvAruqQUvgyXKhrOHyLbXjqHngEvsL</members>
+        <members>SupportDashboard2123weqwe/cVBObsCYyYCaUUByazUbhkxOrfcaPC</members>
+        <members>CommunityDashboardFolder_kewq/SjYpKcDvjCbWtecmeegUaWNHtyoWHs</members>
         <name>Dashboard</name>
     </types>
     <version>61.0</version>
